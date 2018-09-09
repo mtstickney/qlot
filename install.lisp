@@ -295,7 +295,9 @@ qlot exec /bin/sh \"$CURRENT/../~A\" \"$@\"
                 for (project-name . contents) = (freeze-source source)
                 do (format out "~&(~S .~% (~{~S ~S~^~%  ~}))~%" project-name contents)))))
 
-    ;; Quickload project systems.
+    ;; NOTE: Commenting out because I'm not sure this is really required.
+    ;;   All non-Quicklisp dists' releases should be installed above.
+    #+nil
     (let ((systems (project-systems (uiop:pathname-directory-pathname file)))
           (tries-so-far (make-hash-table :test 'equalp))
           (ql:*quickload-verbose* nil))
